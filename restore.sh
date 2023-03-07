@@ -1,0 +1,1 @@
+pg_restore -U root -d omdb omdb.dump

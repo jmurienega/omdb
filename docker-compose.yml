@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  db:
+    container_name: pg_container
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: omdb
+    ports:
+      - "5432:5432"
+    volumes: 
+      - ./omdb.dump:/omdb.dump
+      - ./restore.sh:/docker-entrypoint-initdb.d/restore.sh
