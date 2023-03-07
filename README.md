@@ -18,7 +18,7 @@ git clone --branch main git@github.com:jmurienega/omdb.git
 ## Build and run with docker-compose
 open cmd in the localfolder an run
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ---
@@ -36,5 +36,5 @@ docker-compose up
 ## Down Services
 
 ```bash
-docker-compose down --volumes
+docker compose down --volumes
 ```
