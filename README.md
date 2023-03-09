@@ -49,10 +49,10 @@ password: root
 ##### Connect to postgres
 1. Click Servers > Create > Server to create a new server.
 ![add server](https://miro.medium.com/v2/resize:fit:720/format:webp/1*loUwEWAVFv2J15aVIVTFoA.png)
-2. set name in general tab 
+2. set name in general tab.
 ![add server](https://miro.medium.com/v2/resize:fit:640/format:webp/1*KUQi0CFe1ZDHjOjOQWahJQ.png)
 _Note_: use this field to add a descriptive name for the server; the name specified will be displayed in the Browser tree control
-3. set values in connection tab (password: root)
+3. set values in connection tab (password: root).
 ![add server](https://miro.medium.com/v2/resize:fit:640/format:webp/1*BVTYvUuaWDnEgHHLQxF4Ug.png)
 4. click on save
 
