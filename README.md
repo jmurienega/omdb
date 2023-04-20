@@ -56,7 +56,7 @@ password: admin
 
     ![add server](https://res.cloudinary.com/practicaldev/image/fetch/s--r6TcUXNU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5oqhx5d5fy1f7hfmrpon.png)
 	
-    _Note_: use this field to add a descriptive name for the server; the name specified will be displayed in the Browser tree control
+
 3. Import PostgresSQL Dashboard: Select Dashboard > Import
     ![add server](https://res.cloudinary.com/practicaldev/image/fetch/s--9Tt46UMU--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jt2nl7m16u5vs6acdhe8.png)
 4. Configure Import Details
