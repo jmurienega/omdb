@@ -1,9 +1,19 @@
-version: '3.8'
+version: '3.9'
 
 services:
-
-  db:
-    container_name: pg_container
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  postgres:
+    container_name: postgres
     image: postgres:15.2
     environment:
       POSTGRES_USER: root
@@ -14,12 +24,12 @@ services:
     volumes: 
       - ./omdb.dump:/omdb.dump
       - ./restore.sh:/docker-entrypoint-initdb.d/restore.sh
-  pgadmin:
-    container_name: pgadmin4_container
-    image: dpage/pgadmin4:6.21
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: root
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter
     ports:
-      - "5050:80"
+      - 9187:9187
+    environment:
+      DATA_SOURCE_NAME: "postgresql://root:root@postgres:5432/omdb?sslmode=disable"
+    links:
+      - postgres
+      - prometheus
