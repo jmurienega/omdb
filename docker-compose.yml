@@ -24,6 +24,7 @@ services:
     volumes: 
       - ./omdb.dump:/omdb.dump
       - ./restore.sh:/docker-entrypoint-initdb.d/restore.sh
+    command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c max_connections=200
   postgres-exporter:
     image: prometheuscommunity/postgres-exporter
     ports:
