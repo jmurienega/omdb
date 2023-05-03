@@ -1,10 +1,9 @@
-# How to setup Postgres and Pgadmin with Docker
+# How to setup Postgres Docker
 
 This docker compose will generate the following services:
-* Postgres with an omdb database.
-* PgAdmin
+* Postgres with an postgres_air database.
 
-_Note_: omdb (open media database) is a free database for film media. More info in https://github.com/credativ/omdb-postgresql
+_Note_: postgres_air database can be used for training and various performance experiments. More info in https://github.com/hettie-d/postgres_air
 
 
 ## Requeriments 
@@ -17,13 +16,15 @@ First, you will need to install [Docker](https://docs.docker.com/engine/install/
 #### Clone files
 
 ```bash
-git clone --branch main git@github.com:jmurienega/omdb.git
+git clone --branch tuning git@github.com:jmurienega/omdb.git
 ````
+
+Download https://drive.google.com/file/d/1blDNnM0rgDkudUZLN8Y1T7Z_RfwW_l9w in the folder where you cloned the repository 
 
 ---
 
 #### Build and run services
-open cmd in the folder where you cloned  the repository an run
+open cmd in the folder where you cloned the repository an run
 ```bash
 docker compose up
 ```
@@ -33,30 +34,11 @@ docker compose up
 
 ```bash
 host: localhost
-database: omdb
+database: postgres_air
 port: 5432
-user: root
-password: root
+user: postgres
+password: postgres
 ```
----
-
-#### Connect to pgadmin
-open http://localhost:5050/
-```code
-email: admin@admin.com
-password: root
-```
-##### Connect to postgres
-1. Click Servers > Create > Server to create a new server.
-    ![add server](https://miro.medium.com/v2/resize:fit:720/format:webp/1*loUwEWAVFv2J15aVIVTFoA.png)
-2. set name in general tab.
-
-    ![add server](https://miro.medium.com/v2/resize:fit:640/format:webp/1*KUQi0CFe1ZDHjOjOQWahJQ.png)
-	
-    _Note_: use this field to add a descriptive name for the server; the name specified will be displayed in the Browser tree control
-3. set values in connection tab (password: root).
-    ![add server](https://miro.medium.com/v2/resize:fit:640/format:webp/1*BVTYvUuaWDnEgHHLQxF4Ug.png)
-4. click on save
 
 ---
 #### Down Services
