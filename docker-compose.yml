@@ -3,23 +3,15 @@ version: '3.8'
 services:
 
   db:
-    container_name: pg_container
+    container_name: pg_air
     image: postgres:15.2
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: omdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres_air
     ports:
       - "5432:5432"
     volumes: 
-      - ./omdb.dump:/omdb.dump
+      - ./postgres_air.dump:/postgres_air.dump
       - ./restore.sh:/docker-entrypoint-initdb.d/restore.sh
-  pgadmin:
-    container_name: pgadmin4_container
-    image: dpage/pgadmin4:6.21
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: root
-    ports:
-      - "5050:80"
+ 

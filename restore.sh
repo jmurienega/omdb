@@ -1,1 +1,1 @@
-pg_restore -U root -d omdb omdb.dump
+pg_restore -U postgres -d postgres_air postgres_air.dump
